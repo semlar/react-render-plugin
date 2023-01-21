@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Node } from './Node';
+import * as Rete from 'rete';
 
 function install(editor, { component: NodeComponent = Node, createRoot }) {
     const roots = new Map()
@@ -50,6 +51,13 @@ function install(editor, { component: NodeComponent = Node, createRoot }) {
         previousSelected = selected
     });
 }
+
+class ReteReactControl extends Rete.Control {};
+class ReteReactComponent extends Rete.Component {};
+export { 
+    ReteReactComponent, 
+    ReteReactControl 
+};
 
 export { Node } from './Node';
 export { Socket } from './Socket';
